@@ -26,3 +26,11 @@ Route::get('second',function()
 {  
     return view('second');
 })->name('second'); 
+
+Route::get('/pages/{page}', function($slug) 
+{
+    $page = file_get_contents(__DIR__ . "/../resources/html/{$slug}.html");
+    return view('page', [
+        "page" => $page
+    ]);
+});
