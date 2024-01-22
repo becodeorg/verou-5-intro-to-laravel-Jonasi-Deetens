@@ -1,0 +1,1 @@
+<p>Trademarked by a c with a circle around.</p>

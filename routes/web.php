@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,24 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PageController::class, 'index']);
 
-Route::get('first',function()  
-{  
-    return view('first'); 
-})->name('first'); 
+Route::get('first', [PageController::class, 'showFirst'])->name('first'); 
 
-Route::get('second',function()  
-{  
-    return view('second');
-})->name('second'); 
+Route::get('second', [PageController::class, 'showSecond'])->name('second'); 
 
-Route::get('/pages/{page}', function($slug) 
-{
-    $page = file_get_contents(__DIR__ . "/../resources/html/{$slug}.html");
-    return view('page', [
-        "page" => $page
-    ]);
-});
+Route::get('/pages/{page}', [PageController::class, 'showPage']);
+
+Route::post('/', [PageController::class, 'showData']);
