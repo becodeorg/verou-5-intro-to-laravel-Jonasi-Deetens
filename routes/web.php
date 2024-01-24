@@ -22,4 +22,5 @@ Route::get('second', [PageController::class, 'showSecond'])->name('second');
 
 Route::get('/pages/{page}', [PageController::class, 'showPage']);
 
-Route::post('/', [PageController::class, 'showData']);
+Route::get('/signup', [PageController::class, 'signup'])->name('signup');
+Route::post('/signup', [PageController::class, 'addSignee'])->name('register');

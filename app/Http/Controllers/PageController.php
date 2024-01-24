@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginFormRequest;
 use Illuminate\Http\Request;
+use App\Models\Signee;
 
 class PageController extends Controller
 {
@@ -36,12 +37,24 @@ class PageController extends Controller
         return view('page', ['page' => $pageContent]);
     }
 
-    public function showData(LoginFormRequest $request)
+    public function signup()
+    {
+        return view('signup');
+    }
+
+    public function addSignee(LoginFormRequest $request)
     {
         $firstName = $request->input('firstName');
         $lastName = $request->input('lastName');
 
-        $pageContent = $firstName . ' - ' . $lastName;
+        Signee::create([
+            'firstName' => $request->input('firstName'),
+            'lastName' => $request->input('lastName'),
+        ]);
+
+        $signees = Signee::all();
+
+        $pageContent = "Succesfully signed up as: " . $firstName . ' - ' . $lastName;
 
         return view('page', ['page' => $pageContent]);
     }
