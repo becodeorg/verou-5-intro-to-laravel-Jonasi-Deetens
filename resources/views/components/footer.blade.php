@@ -1,1 +1,3 @@
-<p>Trademarked by a c with a circle around.</p>
+<footer>
+    <p>&copy; {{ date('Y') }} PHP - Laravel</p>
+</footer>

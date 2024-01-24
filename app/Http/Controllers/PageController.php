@@ -41,14 +41,6 @@ class PageController extends Controller
         $firstName = $request->input('firstName');
         $lastName = $request->input('lastName');
 
-        if ($firstName == 'invalid') {
-            return redirect()->back()->withErrors(['firstName' => 'The first name is invalid.']);
-        }
-        if ($lastName == 'invalid') {
-            return redirect()->back()->withErrors(['lastName' => 'The last name is invalid.']);
-        }
-
-
         $pageContent = $firstName . ' - ' . $lastName;
 
         return view('page', ['page' => $pageContent]);

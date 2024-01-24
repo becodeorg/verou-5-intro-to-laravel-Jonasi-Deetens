@@ -18,4 +18,14 @@ class LoginFormRequest extends FormRequest
             'lastName' => 'required|string|max:255',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'firstName.required' => 'First name can\'t be empty.',
+            'lastName.required' => 'Last name can\'t be empty.',
+            'firstName.max' => 'The first name must not exceed :max characters.',
+            'lastName.max' => 'The last name must not exceed :max characters.',
+        ];
+    }
 }

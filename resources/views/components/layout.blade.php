@@ -6,14 +6,12 @@
     <title>Home</title>
 </head>
 <body>
-    <header>
-        @include('components.header')
-    </header>
+    <x-header />
+
     <main>
-        {{ $content }}
+        @yield('content')
     </main>
-    <footer>      
-        @include('components.footer')
-    </footer>
+
+    <x-footer />
 </body>
 </html>

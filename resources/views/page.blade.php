@@ -1,5 +1,7 @@
-<x-layout>
-    <x-slot name='content'>
-        <?= $page ?>
-    </x-slot>
-</x-layout>
+@extends('components.layout')
+
+@section('title', 'First')
+
+@section('content')
+    <?= $page ?>
+@endsection

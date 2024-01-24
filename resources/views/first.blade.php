@@ -1,5 +1,7 @@
-<x-layout>
-    <x-slot name='content'>
-        <h1>First Page!</h1>
-    </x-slot>
-</x-layout>
+@extends('components.layout')
+
+@section('title', 'First')
+
+@section('content')
+    <h1>First page</h1>
+@endsection

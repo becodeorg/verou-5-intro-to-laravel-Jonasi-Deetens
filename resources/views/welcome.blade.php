@@ -1,5 +1,8 @@
-<x-layout>
-    <x-slot name="content">
+@extends('components.layout')
+
+@section('title', 'Home')
+
+@section('content')
         <h1>Hello World!</h1>
         <form method="POST">
             @csrf
@@ -26,5 +29,4 @@
             <input type="submit" value="Send">
         </form>
         {{ $error }}
-    </x-slot>
-</x-layout>
+@endsection

@@ -1,5 +1,7 @@
-<x-layout>
-    <x-slot name='content'>
-        <h1>Second Page!</h1>
-    </x-slot>
-</x-layout>
+@extends('components.layout')
+
+@section('title', 'Second')
+
+@section('content')
+    <h1>Second page</h1>
+@endsection
